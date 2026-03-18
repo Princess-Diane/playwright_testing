@@ -1,37 +1,41 @@
 import { test, expect } from '@playwright/test';
 
-test('Add multiple items dynamically', async ({ page }) => {
+test('Add multiple items dynamically with complimentary popup handling', async ({ page }) => {
   test.setTimeout(120_000);
+
+  // Go to menu page
   await page.goto('https://orderonline.demo.deliverit.com.au/gamma/');
   await page.waitForLoadState('domcontentloaded');
+  
+  // Accept any dialogs automatically
   page.on('dialog', (d) => d.accept().catch(() => null));
 
+  // Close banner if it exists
   try {
     const bannerClose = page.locator('#webalert_close');
     await bannerClose.waitFor({ state: 'visible', timeout: 3000 });
     await bannerClose.click();
     await page.locator('#webalert_container').waitFor({ state: 'hidden' });
-  } catch {
-   
-  }
+  } catch {}
 
-  // Scroll to menu section before adding items
+  // Scroll to menu section
   await page.locator('#single-item-block').scrollIntoViewIfNeeded();
 
+  // Helper: dismiss overlays and modals
   async function dismissOverlays() {
     const popupQty = page.locator('#add-popup-qty');
     const backdrop = page.locator('.modal-backdrop');
     const customModal = page.locator('.custom-modal-overlay').first();
 
-    // Close custom modals if present.
-    if (await customModal.isVisible({ timeout: 500 }).catch(() => false)) {
+    // Close custom modals
+    if (await customModal.isVisible({ timeout: 1500 }).catch(() => false)) {
       const primaryBtn = customModal.getByRole('button', { name: /ok|close|continue|cancel/i }).first();
-      if (await primaryBtn.isVisible({ timeout: 500 }).catch(() => false)) await primaryBtn.click();
+      if (await primaryBtn.isVisible({ timeout: 1500 }).catch(() => false)) await primaryBtn.click();
       else await page.keyboard.press('Escape').catch(() => null);
       await customModal.waitFor({ state: 'hidden', timeout: 10_000 }).catch(() => null);
     }
 
-    if (await popupQty.isVisible({ timeout: 500 }).catch(() => false)) {
+    if (await popupQty.isVisible({ timeout: 1500 }).catch(() => false)) {
       await page.keyboard.press('Escape').catch(() => null);
     }
 
@@ -39,13 +43,27 @@ test('Add multiple items dynamically', async ({ page }) => {
     await backdrop.waitFor({ state: 'hidden', timeout: 10_000 }).catch(() => null);
   }
 
+  async function handleComplimentaryPopup() {
+    const popup = page.locator('text=You have received a free item!');
+    const awesomeBtn = page.getByRole('button', { name: 'Awesome!' });
+
+    if (await popup.isVisible({ timeout: 1500 }).catch(() => false)) {
+      await popup.click().catch(() => null);
+      if (await awesomeBtn.isVisible({ timeout: 1500 }).catch(() => false)) {
+        await awesomeBtn.click();
+        await expect(awesomeBtn).toBeHidden({ timeout: 5000 }).catch(() => null);
+      }
+    }
+  }
+
+  // Helper: add single item
   async function addSingleItem(itemName: string, qty = 1) {
     await dismissOverlays();
     const item = page.locator(`#single-item-block li[data-item-name="${itemName}"]`).first();
     await expect(item, `Item not found in Single item list: ${itemName}`).toBeVisible({ timeout: 15_000 });
     await item.scrollIntoViewIfNeeded();
 
-    // item uses the shared qty modal (#add-popup-qty)
+    // Shared qty modal (#add-popup-qty)
     if ((await item.getAttribute('data-target')) === '#add-popup-qty') {
       await item.click({ force: true });
       const modal = page.locator('#add-popup-qty');
@@ -68,7 +86,7 @@ test('Add multiple items dynamically', async ({ page }) => {
       await expect(modal).toBeHidden({ timeout: 25_000 });
     } 
     else {
-      // item has its own popup trigger inside the card (input.add-button-popup)
+      // Item has its own popup
       const openBtn = item.locator('input.add-button-popup[data-toggle="modal"]').first();
       await expect(openBtn, `No popup trigger found for item: ${itemName}`).toHaveCount(1, { timeout: 10_000 });
       
@@ -103,26 +121,18 @@ test('Add multiple items dynamically', async ({ page }) => {
       await expect(modal).toBeHidden({ timeout: 25_000 });
     }
 
-    // complimentary item popup.
-    const okBtn = page.getByRole('button', { name: 'OK', exact: true });
-    const awesomeBtn = page.getByRole('button', { name: 'Awesome!', exact: true });
-    const postAddPopupBtn = okBtn.or(awesomeBtn).first();
-
-    if (await postAddPopupBtn.isVisible({ timeout: 3500 }).catch(() => false)) {
-      await postAddPopupBtn.click();
-      // Ensure the popup goes away before continuing
-      await expect(postAddPopupBtn).toBeHidden({ timeout: 5000 }).catch(() => null);
-    }
+    // Handle complimentary item popup if it appears
+    await handleComplimentaryPopup();
 
     await dismissOverlays();
   }
 
-  // Add the items
+  // Add items
   await addSingleItem('Chocolate Mousse', 2);
   await addSingleItem('Chocolate Mousse Cup - Flourless', 2);
   await addSingleItem('1.1L Lemonade - Zero Sugar', 1);
 
-  // Go to cart
+  // Go to cart and checkout
   await page.locator('#show_cart').click();
   await page.getByRole('button', { name: 'CHECK OUT' }).click();
 });
