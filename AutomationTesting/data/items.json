@@ -1,0 +1,69 @@
+[
+  {
+    "ItemCode": "IT 1",
+    "Action": "Remove Current Toppings",
+     "Category": "Grills",
+    "ItemType": "Single Item",
+    "ItemOption": "With Item Option",
+    "ExtraToppings": "With Extra Toppings",
+    "OOItem": "Standard Chicken Parmigiana"
+  },
+  {
+    "ItemCode": "IT 2",
+    "Action": "None",
+     "Category": "Grills",
+    "ItemType": "Single Item",
+    "ItemOption": "With Item Option",
+    "ExtraToppings": "With Extra Toppings",
+    "OOItem": "Hawaiian Chicken Parmigiana"
+  },
+  {
+    "ItemCode": "IT 3",
+    "Action": "Remove Current Toppings",
+     "Category": "Grills",
+    "ItemType": "Single Item",
+    "ItemOption": "With Item Option",
+    "ExtraToppings": "With Extra Toppings",
+    "OOItem": "Chicken Schnitzel"
+  },
+
+  {
+    "ItemCode": "IT 4",
+    "Action": "None",
+     "Category": "Grills",
+    "ItemType": "Single Item",
+    "ItemOption": "With Item Option",
+    "ExtraToppings": "With Extra Toppings",
+    "OOItem": "Spanish Chicken Parmigiana"
+  },
+    {
+    "ItemCode": "IT 10",
+    "Category": "Salads",
+    "ItemType": "Single Item",
+    "OOItem": "Greek Salad",
+    "ItemOption": "Without Item Option",  
+    "Action": "None",
+    "ExtraToppings": "Without Extra Toppings"
+  },
+  {
+    "ItemCode": "IT 11",
+    "Category": "Salads",
+    "ItemType": "Single Item",
+    "OOItem": "Cold Chicken Salad",
+    "ItemOption": "Without Item Option",  
+    "Action": "None",
+    "ExtraToppings": "Without Extra Toppings"
+  },
+  {
+    "ItemCode": "IT 14",
+    "Category": "Classic Pizzas",
+    "ItemType": "Group Item",
+    "OOItem": "Capricciosa",
+    "ItemOption": "Without Item Option",
+    "Action": "Remove Current Toppings",
+    "ExtraToppings": "With Extra Toppings",
+    "TargetTopping": "Mozzarella"
+  }
+  
+  
+]
