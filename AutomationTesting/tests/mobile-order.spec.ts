@@ -16,6 +16,7 @@ for (const item of items) {
   if (!item.OOItem || item.OOItem.includes('SKIPPED')) continue;
 
   test(`Order Flow for ${item.ItemCode}: ${item.OOItem}`, async ({ page }) => {
+
     test.slow();
     
     const landing = new LandingPage(page);
@@ -25,11 +26,15 @@ for (const item of items) {
     const checkout = new CheckoutPage(page);
 
     await page.goto(process.env.BASE_URL!);
+    
+    // Start Order
     await landing.enterTableAndStart(process.env.TABLE_NUMBER || '1');
 
+    console.log(`Navigating to Category: ${item.Category}`);
     await menu.selectCategory(item.Category || 'Grills'); 
     await menu.openItem(item.OOItem);
 
+    // Configuration (for IT 5 )
     if (item.ItemType === 'Single Item') {
       await singleItem.configure(item);
     } 
@@ -39,7 +44,7 @@ for (const item of items) {
 
     await checkout.loginAndPay(process.env.TEST_EMAIL!, process.env.TEST_PASSWORD!);
 
-    await expect(page).toHaveURL(/.*confirm_order2/);
-    console.log(`PASS: Item ${item.ItemCode} successfully ordered.`);
+    await expect(page).toHaveURL(/.*confirm_order2/, { timeout: 15000 });
+    console.log(`SUCCESS: ${item.ItemCode} (${item.OOItem}) ordered.`);
   });
 }

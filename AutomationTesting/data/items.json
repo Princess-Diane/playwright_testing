@@ -36,6 +36,38 @@
     "ExtraToppings": "With Extra Toppings",
     "OOItem": "Spanish Chicken Parmigiana"
   },
+   {
+  "ItemCode": "IT 5",
+  "Category": "Salads",
+  "ItemType": "Single Item",
+  "OOItem": "Italian Salad",
+  "ItemOption": "With Item Option",
+  "TargetOption": "BBQ Sauce", 
+  "Action": "Remove Current Toppings",
+  "ExtraToppings": "Without Extra Toppings"
+},
+ 
+ {
+  "ItemCode": "IT 6",
+  "Category": "Salads",
+  "ItemType": "Single Item",
+  "OOItem": "Caesar Salad",
+  "ItemOption": "With Item Option",
+  "TargetOption": "Add Anchovies", 
+  "TargetOptionSecondary": "Add Chicken",
+  "Action": "Remove Current Toppings",
+  "ExtraToppings": "Without Extra Toppings"
+},
+ {
+    "ItemCode": "IT 7",
+    "Category": "Deluxe Pizzas",
+    "ItemType": "Single Item",
+    "ItemOption": "With Item Option",
+    "OOItem": "Meat Lovers",
+      "Action": "Remove Current Toppings",
+      "ExtraToppings": "Without Extra Toppings"
+    
+  },
     {
     "ItemCode": "IT 10",
     "Category": "Salads",
@@ -54,13 +86,23 @@
     "Action": "None",
     "ExtraToppings": "Without Extra Toppings"
   },
+   {
+    "ItemCode": "IT 13",
+    "Category": "Classic Pizzas",
+    "ItemType": "Group Item",
+    "OOItem": "Capricciosa",
+    "ItemOption": "Without Item Option",
+    "Action": "Remove Current Toppings",
+    "ExtraToppings": "With Extra Toppings",
+    "TargetTopping": "Mozzarella"
+  },
   {
     "ItemCode": "IT 14",
     "Category": "Classic Pizzas",
     "ItemType": "Group Item",
     "OOItem": "Capricciosa",
     "ItemOption": "Without Item Option",
-    "Action": "Remove Current Toppings",
+    "Action": "None",
     "ExtraToppings": "With Extra Toppings",
     "TargetTopping": "Mozzarella"
   }
