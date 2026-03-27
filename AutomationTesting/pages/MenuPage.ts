@@ -13,13 +13,28 @@ export class MenuPage {
     await categoryLink.waitFor({ state: 'visible', timeout: 10000 });
     await categoryLink.click();
    
-    await this.page.waitForTimeout(500); 
+    await this.page.waitForTimeout(1000); 
   }
 
   async openItem(itemName: string) {
-    const itemCard = this.page.locator('.item-title').filter({ hasText: itemName }).first();
-    await itemCard.scrollIntoViewIfNeeded();
-    await itemCard.waitFor({ state: 'visible', timeout: 15000 });
-    await itemCard.click();
+  
+    const itemTitle = this.page.locator('.item-title').filter({ hasText: itemName, visible: true }).first();
+
+    if (await itemTitle.isVisible()) {
+      console.log(`Opening item via .item-title: ${itemName}`);
+      await itemTitle.scrollIntoViewIfNeeded();
+      await itemTitle.click();
+    } 
+    else {
+      console.log(`Item .item-title not found. Using generic fallback for: ${itemName}`);
+      
+      const genericItem = this.page.locator('div, h3, span')
+                              .filter({ hasText: itemName, visible: true })
+                              .last(); 
+      
+      await genericItem.scrollIntoViewIfNeeded();
+      await genericItem.waitFor({ state: 'visible', timeout: 10000 });
+      await genericItem.click({ force: true });
+    }
   }
 }

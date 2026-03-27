@@ -68,6 +68,29 @@
       "ExtraToppings": "Without Extra Toppings"
     
   },
+  {
+   
+  "ItemCode": "IT 8",
+  "Category": "Sides",
+  "ItemType": "Single Item",
+  "OOItem": "Tempura Nuggets",
+  "ItemOption": "With Item Option",
+  "TargetOption": "Pepsi", 
+  "Action": "None",
+  "ExtraToppings": "Without Extra Toppings"
+
+  },
+    {
+   
+  "ItemCode": "IT 9",
+"Category": "Sides",
+"ItemType": "Single Item",
+"OOItem": "Potato Wedges",
+"ItemOption": "With Item Option",
+"Action": "Remove Current Toppings",
+"ExtraToppings": "Without Extra Toppings"
+
+  },
     {
     "ItemCode": "IT 10",
     "Category": "Salads",
@@ -85,6 +108,15 @@
     "ItemOption": "Without Item Option",  
     "Action": "None",
     "ExtraToppings": "Without Extra Toppings"
+  },
+  {
+    "ItemCode": "IT 12",
+  "Category": "Desserts",
+  "ItemType": "Single Item",
+  "OOItem": "Belgian Chocolate Oreo Pudding",
+  "ItemOption": "Without Item Option",  
+  "Action": "None",
+  "ExtraToppings": "Without Extra Toppings"
   },
    {
     "ItemCode": "IT 13",
