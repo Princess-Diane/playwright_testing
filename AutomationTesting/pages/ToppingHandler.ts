@@ -4,10 +4,13 @@ export class ToppingHandler {
   constructor(private page: Page) {}
 
   async removeToppingsByLabel(toppings: string[]) {
+    const currentToppingLocator = this.page.locator('label.current-hh-topping');
    
-    const firstToppingCheck = this.page.locator('label').filter({ hasText: new RegExp(toppings[0], 'i') });
-    
-    if (!(await firstToppingCheck.isVisible())) {
+    const firstToppingCheck = currentToppingLocator.filter({ 
+        hasText: new RegExp(toppings[0], 'i') 
+    });
+  
+    if (await firstToppingCheck.count() > 0 && !(await firstToppingCheck.first().isVisible())) {
       const header = this.page.getByText('Current Toppings', { exact: true });
       if (await header.isVisible()) {
         console.log("Toppings hidden. Expanding 'Current Toppings' section...");
@@ -17,7 +20,7 @@ export class ToppingHandler {
     }
 
     for (const topping of toppings) {
-      const toppingLabel = this.page.locator('label').filter({ 
+      const toppingLabel = currentToppingLocator.filter({ 
         hasText: new RegExp(topping, 'i') 
       });
 
@@ -27,18 +30,29 @@ export class ToppingHandler {
           await element.scrollIntoViewIfNeeded({ timeout: 2000 });
           if (await element.isVisible()) {
             console.log(`Unchecking: ${topping}`);
-            const checkbox = element.locator('span').first();
-            if (await checkbox.isVisible()) {
-                await checkbox.click({ force: true });
-            } else {
-                await element.click({ force: true });
-            }
+            const checkbox = element.locator('input[type="checkbox"], span').first();
+            
+            await element.click({ force: true });
             await this.page.waitForTimeout(200); 
           }
         } catch (e) {
           console.log(`Skipping ${topping}: Could not click.`);
         }
       }
+    }
+  }
+
+  async addExtraTopping(toppingName: string) {
+ 
+    const extraToppingLabel = this.page.locator('label.extra-hh-topping')
+        .filter({ hasText: new RegExp(toppingName, 'i') })
+        .first();
+
+    if (await extraToppingLabel.count() > 0) {
+        await extraToppingLabel.scrollIntoViewIfNeeded({ timeout: 2000 }).catch(() => {});
+        if (await extraToppingLabel.isVisible()) {
+            await extraToppingLabel.click();
+        }
     }
   }
 
@@ -58,16 +72,6 @@ export class ToppingHandler {
         await removeBtn.click();
         await this.page.waitForTimeout(300); 
       }
-    }
-  }
-
-  async addExtraTopping(toppingName: string) {
-    const extraToppingLabel = this.page.locator('label').filter({ hasText: new RegExp(toppingName, 'i') }).first();
-    if (await extraToppingLabel.count() > 0) {
-        await extraToppingLabel.scrollIntoViewIfNeeded({ timeout: 2000 }).catch(() => {});
-        if (await extraToppingLabel.isVisible()) {
-            await extraToppingLabel.click();
-        }
     }
   }
 }

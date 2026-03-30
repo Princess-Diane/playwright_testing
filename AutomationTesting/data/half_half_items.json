@@ -1,0 +1,177 @@
+[
+  {
+    "ItemCode": "IT-25",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+    "FirstHalf": "Capricciosa",
+    "FirstHalfOption": "Add Anchovies",
+    "FirstHalfRemovals": [
+      "Mozzarella",
+      "Tomato Sauce",
+      "Ham (100% Pork)",
+      "Mushrooms",
+      "Olives",
+      "Anchovies"
+    ],
+    "SecondHalf": "Queenslander",
+    "SecondHalfRemovals": [
+      "Mozzarella",
+      "Tomato Sauce",
+      "Ham (100% Pork)",
+      "Pineapple",
+      "Mushrooms",
+      "Prawns"
+    ]
+  },
+  {
+  "ItemCode": "IT-26",
+  "Category": "Half/Half",
+  "OOItem": "Half/Half",
+  "Size": "GLUTEN FREE 12 INCH", 
+  "FirstHalf": "Capricciosa",
+  "FirstHalfOption": "Add Anchovies",
+  "FirstHalfRemovals": [], 
+  "SecondHalf": "Pesto Chicken Pizza",
+  "SecondHalfRemovals": []
+},
+{
+    "ItemCode": "IT-27",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+    "Size": "FAMILY 15 INCH",
+    "FirstHalf": "Marinara",
+    "FirstHalfOption": "Add Anchovies",
+    "FirstHalfRemovals": [],
+    "SecondHalf": "Bbq",
+    "SecondHalfRemovals": []
+  },
+  {
+    "ItemCode": "IT-28",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+     "Size": "LARGE 12 INCH",
+    "FirstHalf": "Tandoori Paneer",
+    "FirstHalfOption": "No Addition",
+     "FirstHalfRemovals": [
+      "Mozzarella",
+      "Tomato Sauce",
+      "Pineapple",
+      "Onion",
+      "Spinach",
+      "Tandoori Paneer"
+    ],
+
+    "SecondHalf": "Aussie",
+    "SecondHalfRemovals": [
+      "Mozzarella",
+      "Tomato Sauce",
+      "Ham (100% Pork)",
+      "Bacon",
+      "Egg"
+    ]
+  },
+  {
+    "ItemCode": "IT-29",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+     "Size": "LARGE 12 INCH",
+    "FirstHalf": "Tandoori Paneer",
+    "FirstHalfOption": "No Addition",
+     "FirstHalfRemovals": [],
+    "SecondHalf": "Aussie",
+    "SecondHalfRemovals": []
+  },
+  {
+    "ItemCode": "IT-30",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+    "Size": "FAMILY 15 INCH",
+    "FirstHalf": "Margherita",
+    "FirstHalfRemovals": [],
+    "SecondHalf": "Hot and Spicy",
+    "SecondHalfRemovals": []
+  },
+  {
+    "ItemCode": "IT-31",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+     "Size": "FAMILY 15 INCH",
+    "FirstHalf": "Mexicana",
+     "FirstHalfRemovals": [
+      "Mozzarella",
+      "Tomato Sauce",
+      "Hot Salami (100% Pork)",
+      "Olives",
+      "Onion",
+      "Capsicum",
+      "Chilli",
+      "Jalapeno",
+      "Pepper"
+    ],
+
+    "SecondHalf": "Vegetarian",
+    "SecondHalfRemovals": [
+      "Mozzarella",
+      "Tomato Sauce",
+      "Mushrooms",
+      "Olives",
+      "Onion",
+      "Capsicum"
+    ]
+    
+  },
+   {
+    "ItemCode": "IT-32",
+    "Category": "Half/Half",
+    "OOItem": "Half/Half",
+     "Size": "FAMILY 15 INCH",
+    "FirstHalf": "Mexicana",
+     "FirstHalfRemovals": [],
+    "SecondHalf": "Vegetarian",
+    "SecondHalfRemovals": []
+    
+  },
+  {
+     "ItemCode": "IT-33",
+  "Category": "Half/Half",
+  "OOItem": "Half/Half",
+  "Size": "FAMILY 15 INCH",
+  "FirstHalf": "House Special",
+  "FirstHalfRemovals": [],
+  "SecondHalf": "Carbonara Pizza",
+  "SecondHalfRemovals": [],
+  "ExtraToppings": [
+    { "Category": "Sauce", "Name": "BBQ Sauce" },
+    { "Category": "Cheese", "Name": "Feta Cheese" },
+    { "Category": "Meat", "Name": "Bacon" }
+  ]
+    
+  },
+    {
+      "ItemCode": "IT-34",
+      "Category": "Half/Half",
+      "OOItem": "Half/Half",
+      "Size": "GLUTEN FREE 12 INCH",
+      "FirstHalf": "Meat Lovers",
+      "FirstHalfRemovals": [
+        "Mozzarella",
+        "Tomato Sauce",
+        "Ham (100% Pork)",
+        "Bacon",
+        "Pineapple",
+        "Mushrooms",
+        "Olives",
+        "Onion",
+        "Capsicum"
+      ],
+      "SecondHalf": "Bbq Chicken",
+      "SecondHalfRemovals": [
+        "Mozzarella",
+        "Tomato Sauce",
+        "Bacon",
+        "Mushrooms",
+        "Olives"
+      ]
+      
+    }
+]
