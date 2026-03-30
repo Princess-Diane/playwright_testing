@@ -173,5 +173,27 @@
         "Olives"
       ]
       
+    },
+     {
+      "ItemCode": "IT-35",
+      "Category": "Half/Half",
+      "OOItem": "Half/Half",
+      "Size": "GLUTEN FREE 12 INCH",
+      "FirstHalf": "Meat Lovers",
+      "FirstHalfRemovals": [],
+      "SecondHalf": "Bbq Chicken",
+      "SecondHalfRemovals": []
+      
+    },
+    {
+      "ItemCode": "IT-36",
+      "Category": "Half/Half",
+      "OOItem": "Half/Half",
+      "Size": "FAMILY 15 INCH",
+      "FirstHalf": "Nam Jim Veggie Delight",
+      "FirstHalfRemovals": [],
+      "SecondHalf": "The Spaniard",
+      "SecondHalfRemovals": []
+      
     }
 ]
