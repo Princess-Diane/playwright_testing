@@ -1,0 +1,16 @@
+[
+  {
+    "ItemCode": "DEAL-02",
+    "OOItem": "Deal 2",
+    "PizzaCategory": "Family 15 Inch Classic Pizza",
+    "PizzaData": {
+      "FirstHalf": "Tandoori Paneer",
+      "FirstHalfRemovals": ["Onion"],
+      "SecondHalf": "Aussie",
+      "SecondHalfRemovals": ["Egg"]
+    },
+    "DrinkCategory": "Any 1.25L Drink",
+    "DrinkItem": "1.25L Bottle",
+    "DrinkOption": "Pepsi Max"
+  }
+]
