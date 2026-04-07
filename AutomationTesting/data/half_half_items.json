@@ -138,12 +138,13 @@
   "Size": "FAMILY 15 INCH",
   "FirstHalf": "House Special",
   "FirstHalfRemovals": [],
+  "FirstHalfExtras": [
+    { "Category": "Sauce", "Name": "BBQ Sauce" }
+  ],
   "SecondHalf": "Carbonara Pizza",
   "SecondHalfRemovals": [],
-  "ExtraToppings": [
-    { "Category": "Sauce", "Name": "BBQ Sauce" },
-    { "Category": "Cheese", "Name": "Feta Cheese" },
-    { "Category": "Meat", "Name": "Bacon" }
+ "SecondHalfExtras": [
+    { "Category": "Cheese", "Name": "Feta Cheese" }
   ]
     
   },
