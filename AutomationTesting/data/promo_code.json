@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Min Spend Met (IT 2)",
+    "code": "PRNCSS",
+    "expected": "pass",
+    "successMessage": "A Free Chips has been added",
+    "item": {
+    "ItemCode": "IT 2",
+    "Action": "None",
+    "Category": "Grills",
+    "ItemType": "Single Item",
+    "ItemOption": "With Item Option",
+    "ExtraToppings": "With Extra Toppings",
+    "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+  },
+  {
+     "name": "Min Spend NOT Met (IT 6)",
+     "code": "PRDD",
+     "expected": "fail",
+     "errorMessage": "Minimum order for promotional code is $50",
+     "item": {
+     "ItemCode": "IT 2",
+     "Action": "None",
+     "Category": "Grills",
+     "ItemType": "Single Item",
+     "ItemOption": "With Item Option",
+     "ExtraToppings": "With Extra Toppings",
+     "OOItem": "Hawaiian Chicken Parmigiana"
+     }
+  },
+  {
+    "name": "Valid date (IT 6)",
+    "code": "PRDVLD",
+    "expected": "pass",
+    "successMessage": "A Free Side has been added",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+  },
+  {
+    "name": "Valid day (IT 6)",
+    "code": "PRDVLD",
+    "expected": "pass",
+    "successMessage": "A Free Side has been added",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+  },
+   {
+    "name": "Invalid day (IT 6)",
+    "code": "PRDINVLDDTE",
+    "expected": "fail",
+    "errorMessage": "Promotional code is unavailable today",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+  },
+   {
+    "name": "Login (IT 6)",
+    "code": "PRDVLD",
+    "expected": "pass",
+    "requiresLogin": true,
+    "successMessage": "A Free Side has been added",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+  },
+   {
+    "name": "Expired Promo (IT 6)",
+    "code": "PRDEXPRD",
+    "expected": "pass",
+    "successMessage": "Promotional code is not yet available or expired.",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+  },
+  {
+    "name": "Within limit",
+    "code": "WTHLMT",
+    "expected": "pass",
+    "requiresLogin": true,
+    "successMessage": "A Free Chips has been added",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+},
+{
+    "name": "Limit exceeded",
+    "code": "WTHLMT",
+    "expected": "pass",
+    "requiresLogin": true,
+    "successMessage": "Promotional Code has already been used",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+},
+{
+    "name": "Stacking enabled",
+    "code": "PRDSTKNG",
+    "code2": "PRDVLD",
+    "expected": "pass",
+    "requiresLogin": true,
+    "successMessage": "A Free Chips has been added",
+    "successMessage2": "Cannot Have Another Promo Code.",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+},
+{
+    "name": "Stacking disabled",
+    "code": "PROMOLMTD",
+    "code2": "PRDVLD",
+    "expected": "pass",
+    "requiresLogin": true,
+    "successMessage": "A Free Chips has been added",
+    "successMessage2": "A Free Side has been added",
+    "item": {
+      "ItemCode": "IT 2",
+      "Action": "None",
+      "Category": "Grills",
+      "ItemType": "Single Item",
+      "ItemOption": "With Item Option",
+      "ExtraToppings": "With Extra Toppings",
+      "OOItem": "Hawaiian Chicken Parmigiana"
+    }
+}
+  
+
+]

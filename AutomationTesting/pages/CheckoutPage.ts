@@ -27,4 +27,15 @@ export class CheckoutPage{
     await confirmBtn.click();
     await this.page.waitForURL('**/table-menu/?page=confirm_order2', { timeout: 30000 });
   }
+
+  async loginOnly(email: string, pass: string) {
+    const loginToggle = this.page.locator('p', { hasText: /Have an account/i }).getByText('Login');
+    await loginToggle.click();
+    await this.page.getByRole('textbox', { name: 'Email Address' }).fill(email);
+    await this.page.getByRole('textbox', { name: 'Password' }).fill(pass);
+    await this.page.getByRole('button', { name: 'Login', exact: true }).click();
+
+    // wait for checkout promo input 
+    await expect(this.page.getByRole('textbox', { name: /enter promotional code/i })).toBeVisible({ timeout: 15000 });
+  }
 }
