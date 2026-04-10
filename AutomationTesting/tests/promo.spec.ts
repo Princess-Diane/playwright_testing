@@ -3,7 +3,7 @@ import { LandingPage } from '../pages/LandingPage';
 import { MenuPage } from '../pages/MenuPage';
 import { SingleItem } from '../pages/SingleItem';
 import { PromoHandler } from '../pages/PromoHandler';
-import { CheckoutPage } from '../pages/CheckoutPage'; // 1. Added Import
+import { CheckoutPage } from '../pages/CheckoutPage'; 
 import promoData from '../data/promo_code.json';
 import * as dotenv from 'dotenv';
 
@@ -16,7 +16,7 @@ test.use({
 });
 
 for (const scenario of promoData) {
-  // 2. Added 'context' here to allow clearing cookies
+   
   test(`Promo Validation: ${scenario.name}`, async ({ page, context }) => {
     test.setTimeout(90000);
 
@@ -24,27 +24,24 @@ for (const scenario of promoData) {
     const menu = new MenuPage(page);
     const singleItem = new SingleItem(page);
     const promo = new PromoHandler(page);
-    const checkout = new CheckoutPage(page); // 3. Instantiate CheckoutPage
+    const checkout = new CheckoutPage(page); 
 
     await page.goto(process.env.BASE_URL!);
-    
-    // 4. Added Session Cleanup (Important for testing login/promo fresh)
+      
     await context.clearCookies();
     await page.evaluate(() => {
       localStorage.clear();
       sessionStorage.clear();
     });
     await page.reload();
-
-    // Standard Flow
+ 
     await landing.enterTableAndStart(process.env.TABLE_NUMBER || '1');
     await menu.selectCategory(scenario.item.Category);
     await menu.openItem(scenario.item.OOItem);
     await singleItem.configure(scenario.item);
 
     await page.getByRole('button', { name: /Checkout/i }).first().click();
-
-    // 5. Added Login Process Logic
+ 
     if (scenario.requiresLogin) {
       const email = process.env.TEST_EMAIL || process.env.PROMO_EMAIL;
       const password = process.env.TEST_PASSWORD || process.env.PROMO_PASSWORD;
@@ -79,7 +76,7 @@ for (const scenario of promoData) {
       }
 
     } else {
-      // REGULAR FLOW
+  
       await promo.applyPromoCode(scenario.code);
       if (scenario.expected === "pass") {
         await promo.verifySuccess(scenario.successMessage ?? '');

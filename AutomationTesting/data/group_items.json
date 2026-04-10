@@ -1,102 +1,99 @@
 [
   {
-    "ItemCode": "IT 15",
-    "Category": "Sides",
-    "ItemType": "Group Item",
-    "OOItem": "12 PCS Tempura Nuggets",
-    "ItemOption": "With Item Option",
-    "Action": "None",
-    "ExtraToppings": "With Extra Toppings",
-    "TargetTopping": "None"
-  },
+  "ItemCode": "IT 15",
+  "Category": "Sides",
+  "ItemType": "Group Item",
+  "OOItem": "Tempura Nuggets",
+  "MainOption": "12 Piece", 
+  "GroupChoices": ["Pepsi", "Solo"],
+  "Extras": [
+    { "Category": "Sauce", "Name": "Baconnaise" }
+  ]
+},
   {
-    "ItemCode": "IT 16",
-    "Category": "Sides",
-    "ItemType": "Group Item",
-    "OOItem": "3 PCS Chicken Wings",
-    "ItemOption": "With Item Option",
-    "Action": "Remove Current Toppings",
-    "ExtraToppings": "Without Extra Toppings",
-    "TargetTopping": "Standard Topping"
-  },
+  "ItemCode": "IT 16",
+  "Category": "Sides",
+  "ItemType": "Group Item",
+  "OOItem": "Chicken Wings",
+  "MainOption": "3 Piece",
+  "GroupChoices": ["Napoli Sauce"],
+  "Action": "Remove Current Toppings",
+  "ExtraToppings": "Without Extra Toppings"
+},
   {
     "ItemCode": "IT 17",
     "Category": "Sides",
     "ItemType": "Group Item",
-    "OOItem": "3 PCS Chicken Wings",
-    "ItemOption": "With Item Option",
-    "Action": "None",
-    "ExtraToppings": "Without Extra Toppings",
-    "TargetTopping": "Standard Topping"
+    "OOItem": "Chicken Wings",
+    "MainOption": "3 Piece",
+  "GroupChoices": ["Napoli Sauce"],
+  "Action": "None",
+  "ExtraToppings": "Without Extra Toppings"
   },
   {
     "ItemCode": "IT 18",
     "Category": "Sides",
     "ItemType": "Group Item",
-    "OOItem": "Cheesy Sticks - 5 Piece",
-    "ItemOption": "With Item Option",
+      "OOItem": "Cheesy Sticks",
+    "MainOption": "5 Piece",
+     "GroupChoices":  ["Napoli Sauce"],
     "Action": "None",
-    "ExtraToppings": "Without Extra Toppings",
-    "TargetTopping": "None"
+    "ExtraToppings": "Without Extra Toppings"
   },
   {
     "ItemCode": "IT 19",
     "Category": "Gourmet Pizzas",
     "ItemType": "Group Item",
-    "OOItem": "Tandoori Chicken - Large 12 inch",
-    "ItemOption": "Without Item Option",
+    "OOItem": "Tandoori Chicken",
+    "MainOption": "Large 12 inch",
     "Action": "Remove Current Toppings",
-    "ExtraToppings": "With Extra Toppings",
-    "TargetTopping": "Standard Topping"
+    "ExtraToppings": "With Extra Toppings"
   },
   {
     "ItemCode": "IT 20",
     "Category": "Deluxe Pizzas",
     "ItemType": "Group Item",
-    "OOItem": "Satay Chicken - Small 9 inch",
-    "ItemOption": "Without Item Option",
+    "OOItem": "Satay Chicken",
+    "MainOption": "Small 9 inch",
     "Action": "None",
-    "ExtraToppings": "With Extra Toppings",
-    "TargetTopping": "Standard Topping"
+    "ExtraToppings": "With Extra Toppings"
   },
   {
     "ItemCode": "IT 21",
     "Category": "Classic Pizzas",
     "ItemType": "Group Item",
-    "OOItem": "Pepperoni - Gluten Free 12 Inch",
-    "ItemOption": "Without Item Option",
+    "OOItem": "Pepperoni",
+    "MainOption": "Gluten Free 12 Inch",
     "Action": "None",
-    "ExtraToppings": "With Extra Toppings",
-    "TargetTopping": "None"
+   "Extras": [
+    { "Category": "Sauce", "Name": "BBQ Sauce" }
+  ]
   },
   {
     "ItemCode": "IT 22",
     "Category": "Deluxe Pizzas",
     "ItemType": "Group Item",
-    "OOItem": "Pesto Chicken Pizza - Family 15 Inch",
-    "ItemOption": "Without Item Option",
+    "OOItem": "Pesto Chicken Pizza",
+    "MainOption": "Family 15 Inch",
     "Action": "Remove Current Toppings",
-    "ExtraToppings": "Without Extra Toppings",
-    "TargetTopping": "Standard Topping"
+    "ExtraToppings": "Without Extra Toppings"
   },
   {
     "ItemCode": "IT 23",
     "Category": "Deluxe Pizzas",
     "ItemType": "Group Item",
-    "OOItem": "Pesto Chicken Pizza - Family 15 Inch",
-    "ItemOption": "Without Item Option",
-    "Action": "None",
-    "ExtraToppings": "Without Extra Toppings",
-    "TargetTopping": "Standard Topping"
+    "OOItem": "Pesto Chicken Pizza",
+    "MainOption": "Family 15 Inch",
+    "Action": "Remove Current Toppings",
+    "ExtraToppings": "Without Extra Toppings"
   },
   {
     "ItemCode": "IT 24",
     "Category": "Gourmet Pizzas",
     "ItemType": "Group Item",
-    "OOItem": "Souvlaki - Small 9 Inch",
-    "ItemOption": "Without Item Option",
+    "OOItem": "Souvlaki",
+    "MainOption": "Small 9 Inch",
     "Action": "None",
-    "ExtraToppings": "Without Extra Toppings",
-    "TargetTopping": "None"
+    "ExtraToppings": "Without Extra Toppings"
   }
 ]

@@ -137,6 +137,16 @@
     "Action": "None",
     "ExtraToppings": "With Extra Toppings",
     "TargetTopping": "Mozzarella"
+  },
+  {
+    "ItemCode": "IT 15",
+    "Category": "Sides",
+    "ItemType": "Group Item",
+    "OOItem": "Tempura Nuggets",
+    "ItemOption": "With Item Option",
+    "Action": "None",
+    "ExtraToppings": "With Extra Toppings",
+    "TargetTopping": "None"
   }
   
   
